@@ -1,0 +1,9 @@
+/db-data
+*.log
+logs
+npm-debug.log*
+
+node_modules
+jspm_packages
+.npm
+
