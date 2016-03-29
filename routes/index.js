@@ -11,6 +11,12 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Sign Up'});
 
 });
+router.get('/profile', function (req, res, next) {
+
+  // Rendering the index view with the title 'Sign Up'
+  res.render('profile');
+
+});
 
 /* GET userlist JSON */
 router.get('/userlist', function (req, res, next) {
