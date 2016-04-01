@@ -1,5 +1,6 @@
 body {
 	font-family: sans-serif;
+	overflow: auto;
 }
 h1 {
 	margin: 10px;
@@ -15,4 +16,20 @@ ul {
 li{
 	font-weight: bold;
 	margin: 10px;
+}
+
+.profpic {
+	height: 10em;
+	overflow: auto;
+}
+#graph {
+	height: 20em;
+	background-color: #ecf0f1;
+}
+#wordle {
+	height: 20em;
+	background-color: #1abc9c;
+}
+.navbar-icon {
+	float: right;
 }
