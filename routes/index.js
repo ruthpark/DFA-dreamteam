@@ -17,6 +17,13 @@ router.get('/profile', function (req, res, next) {
   res.render('profile');
 
 });
+router.get('/friends', function (req, res, next) {
+
+  // Rendering the index view with the title 'Sign Up'
+  res.render('friends');
+  
+});
+
 
 /* GET userlist JSON */
 router.get('/userlist', function (req, res, next) {
