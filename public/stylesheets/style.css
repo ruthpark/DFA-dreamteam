@@ -24,7 +24,7 @@ li{
 }
 #graph {
 	height: 20em;
-	background-color: #ecf0f1;
+	background-color: #bdc3c7;
 }
 #wordle {
 	height: 20em;
@@ -32,4 +32,11 @@ li{
 }
 .navbar-icon {
 	float: right;
+}
+.page {
+	background-color: #ecf0f1;
+	height: 100%;
+}
+.timestamp {
+	color:#1abc9c;
 }
