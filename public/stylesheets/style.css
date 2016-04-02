@@ -40,3 +40,13 @@ li{
 .timestamp {
 	color:#1abc9c;
 }
+
+.jumbotron {
+	background: url("../pics/sunny.jpg") no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+	height: 100vh;
+}
