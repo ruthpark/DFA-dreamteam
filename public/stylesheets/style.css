@@ -40,3 +40,6 @@ li{
 .timestamp {
 	color:#1abc9c;
 }
+.status {
+	display: inline;
+}
