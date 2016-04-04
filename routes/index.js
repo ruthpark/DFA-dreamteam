@@ -11,6 +11,12 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Sign Up'});
 
 });
+
+router.get('/status', function (req, res, next) {
+
+  //Rendering view of place to update status
+  res.render('status');
+});
 router.get('/profile', function (req, res, next) {
 
   // Rendering the index view with the title 'Sign Up'
@@ -43,7 +49,7 @@ router.post('/adduser', function (req, res, next) {
 
   // Catching variables passed in the form
   var userName = req.body.username;
-  var userFruit = req.body.userfruit;
+  var passWord = req.body.password;
 
   // Adding the new entry to the db
   // TODO: insert the new document into collection
@@ -56,12 +62,12 @@ router.post('/adduser', function (req, res, next) {
   db.people.find({_id: userName}).toArray(function (err, peeps) {
     if (peeps.length > 0) {
       // the user needs to be updated
-      db.people.update({_id: userName}, {$set: {fruit: userFruit}}, function (err) {
+      db.people.update({_id: userName}, {$set: {password: passWord}}, function (err) {
         // Redirecting back to the root
         res.redirect('/');
       });
     } else {
-      db.people.insert({_id: userName, fruit: userFruit}, function (err) {
+      db.people.insert({_id: userName, password: passWord}, function (err) {
         // Redirecting back to the root
         res.redirect('/');
       });
@@ -97,7 +103,7 @@ router.get('/findfruit', function (req, res, next) {
 
   db.people.find({_id: userName}, function (err, peeps) {
     if (peeps.length > 0) {
-      res.send(peeps[0].fruit);
+      res.send(peeps[0].password);
     } else {
       var errMsg = {message: 'User not found'};
       res.render('error', errMsg);
