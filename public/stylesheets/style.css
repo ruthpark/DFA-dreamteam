@@ -40,7 +40,9 @@ li{
 .timestamp {
 	color:#1abc9c;
 }
-
+.status {
+	display: inline;
+}
 .jumbotron {
 	background: url("../pics/clouds.jpg") no-repeat;
 	-webkit-background-size: cover;
@@ -50,3 +52,4 @@ li{
 
 	height: 100vh;
 }
+
