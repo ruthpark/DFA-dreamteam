@@ -2,9 +2,7 @@ body {
 	font-family: sans-serif;
 	overflow: auto;
 }
-h1 {
-	margin: 10px;
-}
+
 ul {
 	width: 250px;
 	background-color: #ffffff;
@@ -22,6 +20,17 @@ li{
 	height: 10em;
 	overflow: auto;
 }
+
+#emoji {
+	height:4em;
+}
+
+.feeling {
+	margin: 10px;
+	text-align: center;
+	color: #757D75 !important;
+}
+
 #graph {
 	height: 20em;
 	background-color: #bdc3c7;
@@ -53,3 +62,13 @@ li{
 	height: 100vh;
 }
 
+.vertical-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.space{
+	height: 35%;
+}

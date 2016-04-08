@@ -23,14 +23,23 @@
   </head>
   <body>
     {{>navbar}}
-    <div class="row jumbotron">
-
-
+    <div class="jumbotron">
+      <div class="space"></div>
+      <div class ="vertical-center">
     	<!-- INSERT CARTOONY SUNNY/MOONLIT BACKGROUND DEPENDING ON TIME OF DAY -->
+        <h1 class="display-2 feeling">How are you feeling today?</h1><br><br>
+      	<input type="text"><br>
 
-    <h1>How are you feeling today?</h1>
-    	<input type="text">
+        <div> <!-- EMOJIS -->
+        <input type="image" src="pics/content.png" name="emoji" class="btn btn-default" id="emoji" />
+        <input type="image" src="pics/excited.png" name="emoji" class="btn btn-default" id="emoji" />
+        <input type="image" src="pics/sad.png" name="emoji" class="btn btn-default" id="emoji" />
+        <input type="image" src="pics/tired.png" name="emoji" class="btn btn-default" id="emoji" />
+        <input type="image" src="pics/worried.png" name="emoji" class="btn btn-default" id="emoji" />
       <!-- emoticon input: <input type="emoticon"> -->
+        </div>
+
+      </div>
       
     </div>
     
