@@ -34,6 +34,7 @@ li{
 #graph {
 	height: 20em;
 	background-color: #bdc3c7;
+	overflow: auto;
 }
 #wordle {
 	height: 20em;
@@ -71,4 +72,7 @@ li{
 
 .space{
 	height: 35%;
+}
+.center{
+	align:center;
 }
