@@ -30,7 +30,12 @@ router.get('/friends', function (req, res, next) {
   
 });
 
+router.get('/messages', function (req, res, next) {
 
+  // Rendering the index view with the title 'Sign Up'
+  res.render('messages');
+  
+});
 /* GET userlist JSON */
 router.get('/userlist', function (req, res, next) {
   // TODO: query database db.people.find(...) and return the result
