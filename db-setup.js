@@ -1,6 +1,6 @@
 var mongo = require('mongodb').MongoClient;
 
-var dbConnectionUrl = 'mongodb://localhost:27017/test';
+var dbConnectionUrl = 'mongodb://localhost:27017/dreamteam';
 
 var collections = {};
 
@@ -11,7 +11,10 @@ mongo.connect(dbConnectionUrl, function (err, db) {
     return;
   }
 
-  collections.people = db.collection('people');
+  collections.users = db.collection('users');
+  collections.friends = db.collection('friends');
+  collections.moods = db.collection('moods');
+  collections.messages = db.collection('messages');
 });
 
 
