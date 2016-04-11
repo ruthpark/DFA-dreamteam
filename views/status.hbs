@@ -23,29 +23,27 @@
   </head>
   <body>
     {{>navbar}}
-    <div class="row jumbotron">
-    <div class="row">
-    <div class= "col-lg-2"></div>
-    <div class= "col-lg-8">
-    <h1>Sign In</h1>
-      <form name="adduser" method="post" action="/adduser">
+    <div class="jumbotron">
+      <div class="space"></div>
+      <div class ="vertical-center">
+      <form name="submitmood" method="post" action="/submitmood">
+    	<!-- INSERT CARTOONY SUNNY/MOONLIT BACKGROUND DEPENDING ON TIME OF DAY -->
+        <h1 class="display-2 feeling">How are you feeling today?</h1><br><br>
+      	<input type="text" name="mood" class="center"><br>
+        <br>
 
-        <ul>
-        <li>Username</li>
+        <div> <!-- EMOJIS -->
+        <button type="submit"><input type="image" src="pics/content.png" name="emoji" class="btn btn-default" id="emoji" ></button>
+        <button type="submit"> <input type="image" src="pics/excited.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"> <input type="image" src="pics/sad.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"><input type="image" src="pics/tired.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"> <input type="image" src="pics/worried.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+      <!-- emoticon input: <input type="emoticon"> -->
+        </div>
+        </form>
 
-        <li><input type="text" placeholder="Username" name="username"></li>
-
-        <li>Password</li>
-        
-        <li><input type="text" placeholder="Password" name="password"></li>
-          
-        <li><a href="/status" class="button">Submit</a></li>
-        </ul>
-      </form>
-    </div>
-    </div>
+      </div>
       
-    <div class= "col-lg-2"></div>
     </div>
     
 

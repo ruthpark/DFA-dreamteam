@@ -21,33 +21,20 @@
 	</head>
 	<body>
 		{{>navbar}}
-		<div class="page">
-		<br>
 		<div class="container">
-		<div class="row">
-		<div class= "col-xs-3">
-			<div class= "profpic">
-				<img src="pics/connie.jpg" class="profpic">
-			</div>
-		</div>
-		<div class= "col-xs-9">
-			<h1> Connie Liu </h1>
-			<div class= "status">
-				<h5> Just got back from BTDubs! [Boba Tea Wednesday!] Life couldn't be better =] <h5 class="timestamp"> 2 hrs ago </h5></h5>
-			</div>
-		</div>
-		</div>
-		<div class="row">
-			<h3> Graph </h3>
-			<div id="graph"><input type="image" src="pics/graph.png" id="graph"></div>
-			<h3> </h3>
-			<div id="wordle">
-				{{#each moods}}
-				<h3>{{mood}}</h3>
-				{{/each}}
-			</div>
-		</div>
-		</div>
-		</div>
 
+		<div class="row">
+		<h1 class = "stuff">Messages</h1>
+		</div>
+		<div class="row" div style="text-align:center">
+		<h4>
+		<form>
+		To:<br>
+  <input type="text" name="firstname" value="Mickey"><br>
+  Message:<br>
+  <input type="text" name="lastname" value="Mouse"><br><br>
+  <input type="submit" value="Submit">
+  		</form>	
+		</h4>
+		</div>
 	</body>
