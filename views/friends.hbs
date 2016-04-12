@@ -9,7 +9,7 @@
 	    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
 	    <link rel='stylesheet' href='/stylesheets/bootstrap.css.map' />
 	    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-	    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css.map' />
+	   s <link rel='stylesheet' href='/stylesheets/bootstrap.min.css.map' />
 
 	    <link rel='fonts' href='/fonts/glyphicons-halflings-regular.eot' />
 	    <link rel='fonts' href='/fonts/glyphicons-halflings-regular.svg' />
@@ -21,16 +21,24 @@
 	</head>
 	<body>
 		{{>navbar}}
-
+<div class=page>
 <div class="container">
-  <div class="jumbotron">
+
     <h1>My Friend Network</h1> 
-  </div>
+ 
   <div class="row">
     <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <img src="pics/connie.jpg" class = "profpic">
+      <h3>Connie</h3>
+      <p>Feeling Wonderful</p>
+      <div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"><img src="pics/facebook.png" height=20 width=20></button>
+  <button type="button" class="btn btn-default">Middle</button>
+  <button type="button" class="btn btn-default">Right</button>
+  <button type="button" class="btn btn-default" aria-label="Left Align">
+  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+</button>
+</div>
     </div>
     <div class="col-sm-4">
       <h3>Column 2</h3>
@@ -42,8 +50,10 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
+
   </div>
 </div> 
-		
+	</div>	
+
 	</body>
 </html>
