@@ -1,8 +1,11 @@
 var mongo = require('mongodb').MongoClient;
 
-var dbConnectionUrl = 'mongodb://localhost:27017/dreamteam';
+var dbConnectionUrl = process.env.MONGOLAB_URI||'mongodb://localhost:27017/dreamteam';
 
 var collections = {};
+//connect to mongodb on herokuapp
+collections._store = new MongoStore({url: dbConnectionUrl});
+collections.ObjectID = mongodb.ObjectID;
 
 mongo.connect(dbConnectionUrl, function (err, db) {
   if (err) {
