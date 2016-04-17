@@ -2,8 +2,7 @@ var mongodb = require('mongodb').MongoClient;
 //declaring this is necessary to host on heroku
 var MongoStore = require('connect-mongo')(require('express-session'));
 
-console.log(process.env)
-var dbConnectionUrl = process.env.MONGOLAB_URI||'mongodb://localhost:27017/dreamteam';
+var dbConnectionUrl = process.env.MONGODB_URI || process.env.MONGOLAB_URI||'mongodb://localhost:27017/dreamteam';
 
 var collections = {};
 //connect to mongodb on herokuapp
