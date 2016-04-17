@@ -7,7 +7,7 @@ var dbConnectionUrl = process.env.MONGOLAB_URI||'mongodb://localhost:27017/dream
 var collections = {};
 //connect to mongodb on herokuapp
 collections._store = new MongoStore({url: dbConnectionUrl});
-collections.ObjectID = mongodb.ObjectID;
+collections.ObjectID = mongo.ObjectID;
 
 mongo.connect(dbConnectionUrl, function (err, db) {
   if (err) {
