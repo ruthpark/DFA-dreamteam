@@ -21,7 +21,7 @@ li{
 	overflow: auto;
 }
 
-#emoji {
+.emoji {
 	height:4em;
 }
 
@@ -37,7 +37,7 @@ li{
 	overflow: auto;
 }
 #wordle {
-	height: 20em;
+	min-height: 20em;
 	background-color: #1abc9c;
 }
 .navbar-icon {
