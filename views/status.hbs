@@ -29,15 +29,16 @@
       <form name="submitmood" method="post" action="/submitmood">
     	<!-- INSERT CARTOONY SUNNY/MOONLIT BACKGROUND DEPENDING ON TIME OF DAY -->
         <h1 class="display-2 feeling">How are you feeling today?</h1><br><br>
-      	<input type="text" name="mood" class="center"><br>
+      	<center><input type="text" id="mood" class="center"><br></center>
         <br>
 
-        <div> <!-- EMOJIS -->
-        <button type="submit"><input id="content" type="image" src="pics/content.png" name="emoji" class="btn btn-default" class="emoji" ></button>
-        <button type="submit"> <input id="excited" type="image" src="pics/excited.png" name="emoji" class="btn btn-default" class="emoji" /></button>
-        <button type="submit"> <input id="sad" type="image" src="pics/sad.png" name="emoji" class="btn btn-default" class="emoji" /></button>
-        <button type="submit"><input id="tired" type="image" src="pics/tired.png" name="emoji" class="btn btn-default" class="emoji" /></button>
-        <button type="submit"> <input id="worried" type="image" src="pics/worried.png" name="emoji" class="btn btn-default" class="emoji" /></button>
+        <div class> <!-- EMOJIS -->
+        <center><button type="submit"><input type="image" src="pics/content.png" name="emoji" class="btn btn-default" id="emoji" ></button>
+        <button type="submit"> <input type="image" src="pics/excited.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"> <input type="image" src="pics/sad.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"><input type="image" src="pics/tired.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+        <button type="submit"> <input type="image" src="pics/worried.png" name="emoji" class="btn btn-default" id="emoji" /></button>
+      </center>
       <!-- emoticon input: <input type="emoticon"> -->
         </div>
         </form>
