@@ -48,8 +48,7 @@ router.post('/submitmood', function (req, res, next) {
   // Catching variables passed in the form
   var mood = req.body.mood;
   db.moods.insert({
-    mood: mood,
-    emotion: "content"
+    mood: mood
   }, function (err, result){
     res.redirect("/profile");
   })
