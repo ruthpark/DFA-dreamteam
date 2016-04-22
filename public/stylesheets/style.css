@@ -16,6 +16,10 @@ li{
 	margin: 10px;
 }
 
+.center{
+	align:center;
+}
+
 .profpic {
 	height: 10em;
 	overflow: auto;
@@ -36,23 +40,12 @@ li{
 	background-color: #bdc3c7;
 	overflow: auto;
 }
+
 #wordle {
-	height: 20em;
+	min-height: 20em;
 	background-color: #1abc9c;
 }
-.navbar-icon {
-	float: right;
-}
-.page {
-	background-color: #ecf0f1;
-	height: 100%;
-}
-.timestamp {
-	color:#1abc9c;
-}
-.status {
-	display: inline;
-}
+
 .jumbotron {
 	background: url("../pics/clouds.jpg") no-repeat;
 	-webkit-background-size: cover;
@@ -63,6 +56,31 @@ li{
 	height: 100vh;
 }
 
+#mood {
+	font-size: 63px !important;
+	border: 0;
+    outline: 0;
+    background: transparent !important;
+    border-bottom: 2px solid gray;
+}
+
+.navbar-icon {
+	float: right;
+}
+.page {
+	background-color: #ecf0f1;
+	height: 100%;
+}
+.space{
+	height: 35%;
+}
+.status {
+	display: inline;
+}
+.timestamp {
+	color:#1abc9c;
+}
+
 .vertical-center{
   display: flex;
   flex-direction: column;
@@ -70,9 +88,7 @@ li{
   justify-content: center;
 }
 
-.space{
-	height: 35%;
-}
-.center{
-	align:center;
+#wordle {
+	height: 20em;
+	background-color: #1abc9c;
 }

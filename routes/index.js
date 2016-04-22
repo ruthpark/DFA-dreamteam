@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var router = express.Router();
 
 // Access to real DB
@@ -28,14 +29,22 @@ router.get('/profile', function (req, res, next) {
 });
 
 router.get('/friends', function (req, res, next) {
+  var friendsList = [{friend_name:"Jordan"},{friend_name:"Josh"},{friend_name:"Connie"},{friend_name:"Connie2"}]
 
   // Rendering the index view with the title 'Sign Up'
-  res.render('friends');
+  res.render('friends',{friends:friendsList});
   
 });
 
 
 router.get('/messages', function (req, res, next) {
+
+  
+  // Rendering the index view with the title 'Sign Up'
+  res.render('messages');
+  
+});
+
 
 router.post('/submitmood', function (req, res, next) {
 
@@ -49,11 +58,21 @@ router.post('/submitmood', function (req, res, next) {
 
 });
 
+router.post('/addfriend', function (req, res, next) {
 
-  // Rendering the index view with the title 'Sign Up'
-  res.render('messages');
-  
+  // Catching variables passed in the form
+  var mood = req.body.mood;
+  db.moods.insert({
+    mood: mood
+  }, function (err, result){
+    res.redirect("/friends");
+  })
+
 });
+
+
+ 
+
 /* GET userlist JSON */
 router.get('/userlist', function (req, res, next) {
   // TODO: query database db.people.find(...) and return the result
