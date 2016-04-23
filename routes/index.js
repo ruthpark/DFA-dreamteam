@@ -9,7 +9,7 @@ var db = require('../db-setup.js');
 router.get('/', function (req, res, next) {
 
   // Rendering the index view with the title 'Sign Up'
-  res.render('index', { title: 'Sign Up'});
+  res.render('index', { title: 'InTouch'});
 
 });
 
@@ -27,7 +27,7 @@ router.get('/profile', function (req, res, next) {
   });
   res.render('profile', {moods:moodlist});
 });
-
+ 
 router.get('/friends', function (req, res, next) {
   var friendsList = [{friend_name:"Jordan"},{friend_name:"Josh"},{friend_name:"Connie"},{friend_name:"Connie2"}]
 

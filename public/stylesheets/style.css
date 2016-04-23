@@ -18,6 +18,11 @@ li{
 
 .center{
 	align:center;
+	text-align:center;
+	color:white;
+}
+.turquoise{
+	color:#1abc9c !important;
 }
 
 .profpic {
