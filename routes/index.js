@@ -1,5 +1,4 @@
 var express = require('express');
-var session = require('express-session');
 var router = express.Router();
 
 // Access to real DB
@@ -9,7 +8,7 @@ var db = require('../db-setup.js');
 router.get('/', function (req, res, next) {
 
   // Rendering the index view with the title 'Sign Up'
-  res.render('index', { title: 'InTouch'});
+  res.render('index', { title: 'inTouch'});
 
 });
 
@@ -70,57 +69,39 @@ router.post('/addfriend', function (req, res, next) {
 
 });
 
-
- 
-
-/* GET userlist JSON */
-router.get('/userlist', function (req, res, next) {
-  // TODO: query database db.people.find(...) and return the result
-  // res.send({...});
-  db.people.find({}).toArray(function (err, peeps) {
-    var jsonReturn = {};
-    peeps.forEach(function (person) {
-      jsonReturn[person._id] = person.fruit;
-    });
-    res.send(jsonReturn);
-  });
-});
-
-
-
-/* POST to deleteuser */
-router.post('/deleteuser', function (req, res, next) {
-
-  // Catching variables passed in the form
+router.post('/signup', function (req, res, next) {
   var userName = req.body.username;
-
-  // Checking whether user is in db
-  // TODO: check if the user is in db with db.people.find(...),
-  // TODO: and then remove it if it exists db.people.remove(...)
-  // TODO: or return an error
-  db.people.find({_id: userName}).toArray(function (err, peeps) {
-    if (peeps.length > 0) {
-      db.people.remove({_id: userName}, function (err) {
-        res.redirect('/');
+  var userPwd = req.body.password;
+  db.users.find({username: userName}).toArray(function (err, result) {
+    if (result.length <= 0) {
+      db.users.insert({username: userName, pwd: userPwd}, function (err, result) {
+        var user = db.users.findOne({username: userName});
+//        req.session.username = userName;
+        res.send({success: "success"});
       });
     } else {
-      var errMsg = {message: 'User not found'};
-      res.render('error', errMsg);
+      res.send({error: "error"});
     }
   });
 });
 
-router.get('/findfruit', function (req, res, next) {
-  var userName = req.query.username;
-
-  db.people.find({_id: userName}, function (err, peeps) {
-    if (peeps.length > 0) {
-      res.send(peeps[0].password);
+router.post('/signin', function (req, res, next) {
+  console.log("inside index.js");
+  var userName = req.body.username;
+  var userPwd = req.body.password;
+  db.users.find({username: userName, pwd: userPwd}).toArray(function (err, result) {
+    if (result.length > 0) {
+      var user = result[0];
+      console.log("user is " + user.username);
+//      req.session.username = user.username
+      res.send({success: "success"});
     } else {
-      var errMsg = {message: 'User not found'};
-      res.render('error', errMsg);
+      console.log("error sent from server");
+      res.send({error: "error"});
     }
   });
 });
+
+
 
 module.exports = router;
