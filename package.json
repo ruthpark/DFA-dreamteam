@@ -7,6 +7,7 @@
     "db-start": "mongod --dbpath ./db-data"
   },
   "dependencies": {
+    "aws-sdk": "^2.3.5",
     "body-parser": "~1.13.2",
     "bootstrap": "^3.3.6",
     "connect-mongo": "^1.1.0",

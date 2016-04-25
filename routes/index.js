@@ -12,11 +12,67 @@ router.get('/', function (req, res, next) {
 
 });
 
+router.get('/test', function (req, res, next) {
+
+  // Rendering the index view with the title 'Sign Up'
+  res.render('test');
+
+});
+
+
+router.middlewares = [function (req, res, next) { //runs everytime a request is made
+  if (req.session && req.session.username) {
+    db.users.find({username: req.session.username}).toArray(function (err, users) {
+      req.user = users[0];
+    });
+  }
+  next();
+}];
+
+router.post('/signup', function (req, res, next) {
+  var userName = req.body.username;
+  var userPwd = req.body.password;
+  db.users.find({username: userName}).toArray(function (err, result) {
+    if (result.length <= 0) {
+      db.users.insert({username: userName, pwd: userPwd}, function (err, result) {
+        var user = db.users.findOne({username: userName});
+        req.session.username = userName;
+        res.send({success: "success"});
+      });
+    } else {
+      res.send({error: "error"});
+    }
+  });
+});
+
+router.post('/signin', function (req, res, next) {
+  console.log("inside index.js");
+  var userName = req.body.username;
+  var userPwd = req.body.password;
+  db.users.find({username: userName, pwd: userPwd}).toArray(function (err, result) {
+    if (result.length > 0) {
+      var user = result[0];
+      console.log("user is " + user.username);
+      req.session.username = user.username
+      res.send({success: "success"});
+    } else {
+      console.log("error sent from server");
+      res.send({error: "error"});
+    }
+  });
+});
+
 router.get('/status', function (req, res, next) {
 
   //Rendering view of place to update status
-  res.render('status');
+  if (req.session.username){
+    res.render('status');
+  } else {
+    res.redirect("/");
+    //res.send({error: "error"});
+  }
 });
+
 router.get('/profile', function (req, res, next) {
   var moodlist = [];
   db.moods.find({}).toArray(function (err, allMoods) {
@@ -50,7 +106,8 @@ router.post('/submitmood', function (req, res, next) {
   // Catching variables passed in the form
   var mood = req.body.mood;
   db.moods.insert({
-    mood: mood
+    mood: mood,
+    date: new Date()
   }, function (err, result){
     res.redirect("/profile");
   })
@@ -69,38 +126,7 @@ router.post('/addfriend', function (req, res, next) {
 
 });
 
-router.post('/signup', function (req, res, next) {
-  var userName = req.body.username;
-  var userPwd = req.body.password;
-  db.users.find({username: userName}).toArray(function (err, result) {
-    if (result.length <= 0) {
-      db.users.insert({username: userName, pwd: userPwd}, function (err, result) {
-        var user = db.users.findOne({username: userName});
-//        req.session.username = userName;
-        res.send({success: "success"});
-      });
-    } else {
-      res.send({error: "error"});
-    }
-  });
-});
 
-router.post('/signin', function (req, res, next) {
-  console.log("inside index.js");
-  var userName = req.body.username;
-  var userPwd = req.body.password;
-  db.users.find({username: userName, pwd: userPwd}).toArray(function (err, result) {
-    if (result.length > 0) {
-      var user = result[0];
-      console.log("user is " + user.username);
-//      req.session.username = user.username
-      res.send({success: "success"});
-    } else {
-      console.log("error sent from server");
-      res.send({error: "error"});
-    }
-  });
-});
 
 
 
