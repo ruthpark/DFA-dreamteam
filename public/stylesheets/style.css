@@ -16,8 +16,12 @@ li{
 	margin: 10px;
 }
 
-.center{
-	align:center;
+.turquoise{
+	color:#1abc9c;
+
+}
+.white{
+	color: white !important;
 }
 
 .profpic {
@@ -86,6 +90,7 @@ li{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align:center;
 }
 
 #wordle {

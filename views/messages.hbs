@@ -21,20 +21,22 @@
 	</head>
 	<body>
 		{{>navbar}}
-		<div class="container">
-
-		<div class="row">
-		<h1 class = "stuff">Messages</h1>
-		</div>
-		<div class="row" div style="text-align:center">
-		<h4>
-		<form>
-		To:<br>
-  <input type="text" name="firstname" value="Mickey"><br>
-  Message:<br>
-  <input type="text" name="lastname" value="Mouse"><br><br>
-  <input type="submit" value="Submit">
-  		</form>	
-		</h4>
-		</div>
+<form action="/my-handling-form-page" method="post">
+    <div>
+        <label for="name">From:</label>
+        <input type="text" id="name" />
+    </div>
+    <div>
+        <label for="username">To:</label>
+        <input type="username" id="username" />
+    </div>
+    <div>
+        <label for="msg">Message:</label>
+        <textarea id="msg"></textarea>
+    </div>
+    
+    <div class="button">
+        <button type="submit">Send your message</button>
+    </div>
+</form>
 	</body>
