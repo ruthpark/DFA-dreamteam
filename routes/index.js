@@ -84,11 +84,20 @@ router.get('/profile', function (req, res, next) {
 });
  
 router.get('/friends', function (req, res, next) {
-  var friendsList = [{friend_name:"Jordan"},{friend_name:"Josh"},{friend_name:"Connie"},{friend_name:"Connie2"}]
+  // var friendsList = [{friend_name:"Jordan"},{friend_name:"Josh"},{friend_name:"Connie"},{friend_name:"Connie2"}]
 
   // Rendering the index view with the title 'Sign Up'
-  res.render('friends',{friends:friendsList});
+  // res.render('friends',{friends:friendsList});
   
+
+
+  var friendslist = [];
+  db.friends.find({}).toArray(function (err, allFriends) {
+    allFriends.forEach(function (friend) {
+      friendslist.push({friend: friend.friend})
+    });
+  });
+  res.render('friends', {friends:friendslist});
 });
 
 
@@ -117,9 +126,9 @@ router.post('/submitmood', function (req, res, next) {
 router.post('/addfriend', function (req, res, next) {
 
   // Catching variables passed in the form
-  var mood = req.body.mood;
-  db.moods.insert({
-    mood: mood
+  var friend = req.body.friend;
+  db.friends.insert({
+    friend: friend
   }, function (err, result){
     res.redirect("/friends");
   })
