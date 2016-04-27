@@ -71,6 +71,9 @@ li{
 	background-color: #ecf0f1;
 	height: 100%;
 }
+.round {
+  border-radius: 20px;
+}
 .space{
 	height: 35%;
 }

@@ -29,16 +29,18 @@
       <form name="submitmood" method="post" action="/submitmood">
     	<!-- INSERT CARTOONY SUNNY/MOONLIT BACKGROUND DEPENDING ON TIME OF DAY -->
         <h1 class="display-2 feeling">How are you feeling today?</h1><br><br>
-      	<center><input type="text" id="mood" class="center"><br></center>
-        <br>
-
-        <div class> <!-- EMOJIS -->
-        <center><button type="submit"><input type="image" src="pics/content.png" name="emoji" class="btn btn-default" id="emoji" ></button>
-        <button type="submit"> <input type="image" src="pics/excited.png" name="emoji" class="btn btn-default" id="emoji" /></button>
-        <button type="submit"> <input type="image" src="pics/sad.png" name="emoji" class="btn btn-default" id="emoji" /></button>
-        <button type="submit"><input type="image" src="pics/tired.png" name="emoji" class="btn btn-default" id="emoji" /></button>
-        <button type="submit"> <input type="image" src="pics/worried.png" name="emoji" class="btn btn-default" id="emoji" /></button>
-      </center>
+          <center>
+            <input type="text" id="mood" class="center">
+            <br><br>
+          </center>
+          <div class="centered text-center"> <!-- EMOJIS -->
+            <label class="checkbox-inline"><input type="image" src="pics/content.png" name="emoji" class="btn btn-info round" id="emoji"></label>
+            <label class="checkbox-inline"><input type="image" src="pics/excited.png" name="emoji" class="btn btn-success round" id="emoji" /></label>
+            <label class="checkbox-inline"><input type="image" src="pics/sad.png" name="emoji" class="btn btn-default round" id="emoji" /></label>
+            <label class="checkbox-inline"><input type="image" src="pics/tired.png" name="emoji" class="btn btn-warning round" id="emoji" /></label>
+            <label class="checkbox-inline"><input type="image" src="pics/worried.png" name="emoji" class="btn btn-danger round" id="emoji" /></label>
+        <br><br>
+        <button type="submit" class="btn btn-primary btn-block">submit</button>
       <!-- emoticon input: <input type="emoticon"> -->
         </div>
         </form>
