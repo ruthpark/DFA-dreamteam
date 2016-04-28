@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>AWS SDK for JavaScript - Sample Application</title>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.5.min.js">
+    AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    IdentityPoolId: 'us-east-1:dcbe062d-dd18-423b-ab4a-29f0b14b4a26',
+  }); 
+    AWS.config.region = 'us-east-1'; // Region
+
+
+    </script>
+
+</head>
+
+<body>
+
+
+<input type="file" id="file-chooser" /> 
+<button id="upload-button">Upload to S3</button>
+<div id="results"></div>
+
+<script type="text/javascript">
+  var bucket = new AWS.S3({params: {Bucket: 'dfa-dreamteam-east'}});
+  var fileChooser = document.getElementById('file-chooser');
+  var button = document.getElementById('upload-button');
+  var results = document.getElementById('results');
+  button.addEventListener('click', function() {
+    var file = fileChooser.files[0];
+    if (file) {
+      results.innerHTML = '';
+
+      var params = {Key: file.name, ContentType: file.type, Body: file};
+      bucket.upload(params, function (err, data) {
+        results.innerHTML = err ? 'ERROR!' : 'UPLOADED.';
+        console.log(err);
+      });
+    } else {
+      results.innerHTML = 'Nothing to upload.';
+    }
+  }, false);
+</script>
+
+</body>
+</html>

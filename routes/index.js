@@ -108,6 +108,13 @@ router.get('/messages', function (req, res, next) {
   res.render('messages');
   
 });
+router.get('/message-image', function (req, res, next) {
+
+  
+  // Rendering the index view with the title 'Sign Up'
+  res.render('message-image');
+  
+});
 
 
 router.post('/submitmood', function (req, res, next) {
