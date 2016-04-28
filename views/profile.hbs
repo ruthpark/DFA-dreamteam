@@ -18,6 +18,9 @@
 	    <link rel='fonts' href='/fonts/glyphicons-halflings-regular.woff2' />
 
 	    <link rel='stylesheet' href='/stylesheets/style.css' />
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      	<script src="/js/ajax.js"></script>
+      	<script src = "/js/bootstrap.min.js"> </script>
 	</head>
 	<body>
 		{{>navbar}}
@@ -44,6 +47,11 @@
       </div>
 			<h3> </h3>
 			<div id="wordle">
+<!--			<script type="text/javascript" src="js/index.js"></script>
+			<script type="text/javascript" src="js/wordcloud.js"></script>
+			
+			<div id="my_canvas"></div>
+			<canvas id="canvas" class = "canvas"></canvas>-->
 				{{#each moods}}
 				<h3>{{mood}}</h3>
 				{{/each}}

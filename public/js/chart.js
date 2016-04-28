@@ -19,7 +19,7 @@ function drawStacked() {
         title: 'Your Emotions Over Time',
         isStacked: 'percent',
         height: 280,
-        width: 1000,
+        width: 1180,
         hAxis: {
           title: 'Date',
           format: 'MMM d'
